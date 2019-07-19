@@ -1,5 +1,11 @@
 # Reverse
 
+# Table of Contents
+* [Commands](#Commands)
+* [GDB](#GDB)
+* [IDA PRO](#IDA-PRO)
+* [Assembly](#Assembly)
+
 ## Commands
 * `file <something>` : 查看檔案類型
 * `strings <something>` : 印出檔案中的可視字串
@@ -12,6 +18,46 @@
   * `^w` : search
   * `^x` : save and exit
   * nop : \x90
+
+## GDB
+* 使用方法 : `$gdb <binary>` or `$gdb` + `attach pid`
+* 設定斷點 : `break <address>` or `b <address>`
+  * `break *0x0000000004004d7`
+* 執行程式 : `run` or `r`
+* 執行下一個指令(會追進function) : `step`
+* 執行下一個指令(不會追進function) : `next` or `n`
+* 繼續執行 : `continue`
+* 直行至function結束 : `finish`
+* 跳轉 : `jump <address>`
+  * `jump *0x0000000004004d7`
+* 印出暫存器的值 : `print <register>`
+  * `print $rax`
+* 印出記憶體的值 : `x <memory address>`
+  * `x 0x7fffffffe920`
+* 改變暫存器的值 : `set <register>=<value>`
+  * `set $rsp=0x7fffffffe800`
+* 改變記憶體的值 : `set {<size>}<memory address>=<value>`
+  * `set {int}0x7fffffffea00=2`
+
+## IDA PRO
+* 把 binary 反編譯回 C code
+  1. 在 functions window 點選想看的 function
+  2. 按下F5
+* 列出可視字串表
+  * View => Open subviews => Strings
+  * shift + F12
+* 標記變數名
+  1. 先點擊要命名的變數
+  2. 按下 n
+  3. 輸入新的變數名
+* 標記 function 參數
+  1. 先點擊該 function
+  2. 按下 y
+  3. 輸入正確的 function 參數
+* 標記 struct 結構
+  1. 切到 Structures 頁面
+  2. 看裡面的說明
+  3. 新增 struct 並標記裡面的內容
 
 ## Assembly
 * [x86 and amd64 instructions](https://www.felixcloutier.com/x86/)
