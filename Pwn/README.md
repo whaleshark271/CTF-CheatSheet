@@ -23,7 +23,7 @@
 * gdb-vmmap : 查看目前程式的記憶體分佈，以及rwx權限設定
   * `vmmap`
 
-## Seucrity Options
+## Security Options
 ### Lazy Binding
 * Dynamic linking的程式在執行過程中，有些library的函式可能到結束都不會執行
 * ELF採取Lazy binding的機制，在第一次call library函式時，才會去尋找函式真正的位置進行binding
