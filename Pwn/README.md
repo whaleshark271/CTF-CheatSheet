@@ -22,6 +22,34 @@
   * `checksec $binary`
 * gdb-vmmap : 查看目前程式的記憶體分佈，以及rwx權限設定
   * `vmmap`
+* pwntools
+  * ```python
+    from pwn import *
+
+    # connet to server
+    r = process('./add')            # localhost binary
+    r = remote('140.113.0.3', 8080) # remote binary
+
+    s = r.recvuntil(':')  # receive from binary until ':'
+    print '1: ' + s
+
+    r.sendline('3 5')     # send to server
+
+    r.interactive()       # switch to interactive mode
+    ```
+* readelf : 分析libc的工具
+  * 先用 `ldd <binary>` 看libc在哪裡
+  * `readelf -a $libc | less`
+* ROPgadget
+  * 列出binary中可以使用的ROP gadget
+  * `ROPgadget --binar $binary`
+* one_gadget : 在libc中尋找可以一步開啟shell的gadget
+  * 限制
+    * 需有libc base
+    * 須滿足必要條件(constraints)
+  * `one_gadget $libc`
+* radare2 : 動態、靜態分析都可以用的工具
+  * `r2 $binary`
 
 ## Security Options
 ### Lazy Binding
