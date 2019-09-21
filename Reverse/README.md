@@ -5,7 +5,7 @@
 * [GDB](#GDB)
 * [IDA PRO](#IDA-PRO)
 * [Assembly](#Assembly)
-* [Decompile .pyc](#Decompile-.pyc)
+* [Decompile pyc](#Decompile-pyc)
 
 ## Commands
 * `file <something>` : 查看檔案類型
@@ -80,6 +80,6 @@
     |                | <= esp, low address
     ```
 
-## Decompile .pyc
+## Decompile pyc
 * `pip install uncompyle6`
 * `uncompyle6 -o . <filename>.pyc`
