@@ -9,6 +9,9 @@
     * [Fermat's Factorization Method](#Fermat's-Factorization-Method)
   * [RSA - Implementation](#RSA---Implementation)
 
+## Online Decoding Tools
+* [aadecode](https://cat-in-136.github.io/2010/12/aadecode-decode-encoded-as-aaencode.html) : 顏文字編碼 (ﾟДﾟ)
+
 ## RSA
 These are mostly from BambooFox
 * Fermat's little theorem : `a^(p-1) ≡ 1 mod p`
