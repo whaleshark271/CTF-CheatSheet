@@ -33,12 +33,24 @@
   * `jump *0x0000000004004d7`
 * 印出暫存器的值 : `print <register>`
   * `print $rax`
-* 印出記憶體的值 : `x <memory address>`
-  * `x 0x7fffffffe920`
+* 印出記憶體的值 : `x/wx <memory address>`
+  * b/h/w/g 分別代表1, 2, 4, 8 bytes
+  * /後可以設定要印出幾個位置 ex. `x/40gx`
+  * x可以換成u/d/s/i
+    * u = unsigned int
+    * d = decimal
+    * s = string
+    * i = 指令
+  * `x/6s 0x7fffffffe920`
 * 改變暫存器的值 : `set <register>=<value>`
   * `set $rsp=0x7fffffffe800`
 * 改變記憶體的值 : `set {<size>}<memory address>=<value>`
   * `set {int}0x7fffffffea00=2`
+* 查看所有斷點 : `info breakpoint`
+* 查看暫存器狀態 : `info registers`
+* 顯示frame的相關資訊 : `info frame`
+* 產生該長度的字串 : `pattc <number>`
+* 查看該數值在產生字串的偏移量 : `pattern offset <數值>`
 
 ## IDA PRO
 * 把 binary 反編譯回 C code

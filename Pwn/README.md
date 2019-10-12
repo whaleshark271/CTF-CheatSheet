@@ -17,7 +17,7 @@
   * 連線 : `nc $ip $port`
 * objdump
   * `objdump -M intel -d $binary | less`
-* gdb
+* [gdb](https://github.com/whaleshark271/CTF-CheatSheet/tree/master/Reverse#GDB)
 * checksec : 查看某個程式的安全性保護
   * `checksec $binary`
 * gdb-vmmap : 查看目前程式的記憶體分佈，以及rwx權限設定
@@ -37,6 +37,26 @@
 
     r.interactive()       # switch to interactive mode
     ```
+  * 建立通訊接口
+    * 本地端 : r = process('./test')
+    * 遠端 : r = remote('host', port)
+  * r.interactive() : 通常在利用完成後去得到shell
+  * 指定檔案的架構 : context.arch = 'i386' / 'amd64'
+  * 傳送資料
+    * 傳送字串 : send('deadbeef')
+    * 在接收到':'後傳送字串 : sendafter(':', 'deadbeef')
+    * 後面有換行 : sendline('deadbeef')
+    * 在接收到':'後傳送 + '\n' : sendlineafter(':', 'deadbeef')
+  * 接收資料
+    * recv()
+    * recvline(keepends=True) : 接收一行, drop '\n' based on keepends
+    * recvuntil(':') : 接收直到':'
+  * pack data (little endian)
+    * p32(32 bit data) ex. `p32(0x12345678)` = \x78\x56\x34\x12
+    * p64(64 bit data)
+  * unpack
+    * u32()
+    * u64()
 * readelf : 分析libc的工具
   * 先用 `ldd <binary>` 看libc在哪裡
   * `readelf -a $libc | less`
