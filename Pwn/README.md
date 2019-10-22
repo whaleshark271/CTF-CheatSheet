@@ -10,6 +10,7 @@
   * [NX](#NX)
   * [PIE](#PIE)
   * [ASLR](#ASLR)
+* [Shellcode](#Shellcode)
 
 ## Tools
 * nc/ncat
@@ -108,3 +109,33 @@
 * 記憶體位址隨機變化
 * 每次執行時，stack、heap、library位置都不一樣
 * **ASLR是系統設定，非程式的設定**
+* 查看/設定ASLR
+  * $cat /proc/sys/kernel/randomize_va_space
+    * 0 : 關閉ASLR
+    * 1 : 部分關閉ASLR
+    * 2 : 完全開啟ASLR
+  * $echo 0 > /proc/sys/kernel/randomize_va_space
+
+## Shellcode
+* C program to run shellcode
+  ```c
+  #include<stdio.h>
+  #include<string.h>
+
+  const char code[] = "/x48/x31/xF6..." // String Literal of shellcode
+
+  int main(int argc, char **argv)
+  {
+    printf("Shellcode Length: %d\n", strlen(code));
+
+    int (*func)();
+    func = (int (*)()) code;
+    (int)(*func)();
+    return 0;
+  }
+  ```
+* [x86 syscall table](https://syscalls.kernelgrok.com/)
+  * run `int 0x80`
+* [x64 syscall table](http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+  * run `syscall`
+* [Turn shellcode to string literal](https://defuse.ca/online-x86-assembler.htm#disassembly)
