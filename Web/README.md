@@ -1,6 +1,7 @@
 # Web
 
 # Table of Contents
+* [Tools](#Tools)
 * [F12](#F12)
 * [Commands](#Commands)
 * [Directory Listing](#Directory-Listing)
@@ -9,6 +10,9 @@
 * [XSS Injection](#XSS-Injection)
 * [Command Injection](#Command-Injection)
 * [XML Injection](#XML-Injection)
+
+## Tools
+* [HackBar](https://chrome.google.com/webstore/detail/hackbar/ejljggkpbkchhfcplgpaegmbfhenekdc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
 
 ## F12
 * Check Network header/response

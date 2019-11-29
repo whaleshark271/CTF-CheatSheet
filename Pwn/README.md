@@ -134,6 +134,7 @@
     return 0;
   }
   ```
+  * compile : `gcc -z execstack -o shell shell.c`
 * [x86 syscall table](https://syscalls.kernelgrok.com/)
   * run `int 0x80`
 * [x64 syscall table](http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
