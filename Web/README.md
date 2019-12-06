@@ -28,8 +28,8 @@
 
 ## SQL Injection
 ### MySQL
-* `'or 1 = 1 --`
-* 選取特定資料 : `'or 1 = 1 limit 1,1 --`
+* `'or 1 = 1 -- `
+* 選取特定資料 : `'or 1 = 1 limit 1,1 -- `
   * 從offset=1開始選取前50筆資料(略過最前面1筆)
   * `limit 1,50`
 * Blind sql injection
@@ -47,6 +47,8 @@
     * /**/,%09, %0a, %0b, %0c, %0d, %a0
     * OR(1=1)
   * OR => ||, AND => &&
+    * &直接傳過去是有特殊涵意的，例如?key1=value1&key2=value2
+    * 用%26取代
   * = => LIKE
   * LIMIT 0,1 => LIMIT 1 OFFSET 0
 
