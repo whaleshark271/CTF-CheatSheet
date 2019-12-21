@@ -2,6 +2,7 @@
 
 # Table of Contents
 * [Tools](#Tools)
+* [Code Vulnerability](#Code-Vulnerability)
 * [Security Options](#Security-Options)
   * [Lazy Binding](#Lazy-Binding)
   * [GOT & PLT](#GOT-&-PLT)
@@ -71,6 +72,17 @@
   * `one_gadget $libc`
 * radare2 : 動態、靜態分析都可以用的工具
   * `r2 $binary`
+
+## Code Vulnerability
+* `gets()`
+  * Vulnerable to buffer overflow
+  * Doesn't check the length of input
+* `strncmp()`
+  * Check until null character ('\0') is reached
+  * Use pwntools to send '\0' as one of the string and pass the comparison
+* `abs()`
+  * Vulnerable to integer overflow/underflow
+  * INT_MIN(-2147483648) doesn't have 2's complement
 
 ## Security Options
 ### Lazy Binding
