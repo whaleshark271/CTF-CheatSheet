@@ -1,12 +1,14 @@
 # Crypto
 
 # Table of Contents
+* [Online Decoding Tools](#Online-Decoding-Tools)
 * [RSA](#RSA)
   * [RSA - Tools](#RSA---Tools)
   * [Common Factor Attack](#Common-Factor-Attack)
   * [Integer Factorization](#Integer-Factorization)
     * [Pollard's p-1 Algorithm](#Pollard's-p-1-Algorithm)
     * [Fermat's Factorization Method](#Fermat's-Factorization-Method)
+    * [RSA LSB Oracle](#RSA-LSB-Oracle)
   * [RSA - Implementation](#RSA---Implementation)
 
 ## Online Decoding Tools
@@ -114,6 +116,8 @@ These are mostly from BambooFox
         b = gmpy2.iroot(b2,2)[0]
     return [a+b, a-b]
   ```
+
+#### RSA LSB Oracle
 
 ### RSA - Implementation
 * 解析公私鑰
