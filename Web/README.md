@@ -14,6 +14,7 @@
 
 ## Tools
 * [HackBar](https://chrome.google.com/webstore/detail/hackbar/ejljggkpbkchhfcplgpaegmbfhenekdc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
+* [Wayback Machine](https://archive.org/web/) : Explore web pages saved over time.
 
 ## F12
 * Check Network header/response

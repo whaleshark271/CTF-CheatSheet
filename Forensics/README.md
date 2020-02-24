@@ -1,8 +1,9 @@
-# Forensic
+# Forensics
 
 # Table of Contents
 * [Tools](#Tools)
 * [File Carving](#File-Carving)
+* [LSB Steganography](#LSB-Steganography)
 
 ## Tools
 * [Binwalk](https://github.com/ReFirmLabs/binwalk) : Search for embedded files or data.
@@ -22,3 +23,9 @@
 ## File Carving
 * File carving is the process of reconstructing files by scanning the raw bytes of the disk and reassembling them. This is usually done by examining the header (the first few bytes) and footer (the last few bytes) of a file.
 * [Info](https://resources.infosecinstitute.com/file-carving/#gref)
+
+## LSB Steganography
+* [Introduction](https://itnext.io/steganography-101-lsb-introduction-with-python-4c4803e08041)
+* Script from [CSY54 of WXN CTF](https://hackmd.io/@CSY54/WXN_writeup#Forensics-LSB-268-pts-19-solves)
+* What if we don't know the order of the colors?
+  * Use [zsteg](https://github.com/zed-0xff/zsteg)
