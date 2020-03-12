@@ -1,6 +1,7 @@
 # Crypto
 
 # Table of Contents
+* [Resources](#Resources)
 * [Online Decoding Tools](#Online-Decoding-Tools)
 * [RSA](#RSA)
   * [RSA - Tools](#RSA---Tools)
@@ -10,6 +11,10 @@
     * [Fermat's Factorization Method](#Fermat's-Factorization-Method)
     * [RSA LSB Oracle](#RSA-LSB-Oracle)
   * [RSA - Implementation](#RSA---Implementation)
+
+## Resources
+* [OAlienO's Blog](https://oalieno.github.io/security/crypto/asymmetric/rsa/implementation/)
+* [The Cryptopals Crypto Challenges](https://cryptopals.com/)
 
 ## Online Decoding Tools
 * [aadecode](https://cat-in-136.github.io/2010/12/aadecode-decode-encoded-as-aaencode.html) : 顏文字編碼 (ﾟДﾟ)
@@ -126,4 +131,3 @@ These are mostly from BambooFox
   public = RSA.importKey(open('public.pem').read())
   private = RSA.importKey(open('private.pem').read())
   ```
-* [OAlienO's Blog](https://oalieno.github.io/security/crypto/asymmetric/rsa/implementation/)

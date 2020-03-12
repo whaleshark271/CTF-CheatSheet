@@ -1,11 +1,15 @@
 # Reverse
 
 # Table of Contents
+* [Resources](#Resources)
 * [Commands](#Commands)
 * [GDB](#GDB)
 * [IDA PRO](#IDA-PRO)
 * [Assembly](#Assembly)
 * [Decompile pyc](#Decompile-pyc)
+
+## Resources
+* [Reverse Engineering for Beginners by Ophir Harpaz](https://www.begin.re/)
 
 ## Commands
 * `file <something>` : 查看檔案類型
@@ -73,6 +77,7 @@
   3. 新增 struct 並標記裡面的內容
 
 ## Assembly
+* [x86 Assembly Guide](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html)
 * [x86 and amd64 instructions](https://www.felixcloutier.com/x86/)
   * [syscall](http://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
 * [Calling Convention](https://medium.com/@ktecv2000/%E7%B7%A9%E8%A1%9D%E5%8D%80%E6%BA%A2%E4%BD%8D%E6%94%BB%E6%93%8A%E4%B9%8B%E4%B8%80-buffer-overflow-83516aa80240)
