@@ -87,15 +87,19 @@
     mov ebp, esp
     sub esp, N
     ```
-  * Stack frame :
-    ```
-    | return address | <= high address
-    | saved ebp      |
-    ...
-    <local variables>
-    ...
-    |                | <= esp, low address
-    ```
+* Stack frame : `Add(x,y)` as example
+  * Function parameters are pushed in reverse order. y is pushed first, then x.
+  ```
+  |      ...       | <= high address
+  |       y        | # function parameter, ebp - 0xC
+  |       x        | # function parameter, ebp - 0x8
+  | return address | 
+  | saved ebp      | <= ebp, fixed, used as an anchor
+  ...
+  <local variables>
+  ...
+  |                | <= esp, low address
+  ```
 
 ## Decompile pyc
 * `pip install uncompyle6`
