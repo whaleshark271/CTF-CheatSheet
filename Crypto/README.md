@@ -62,7 +62,8 @@ These are mostly from BambooFox
 * Python Packages
   * PyCrypto or PyCryptodome
   * primefac-> 有很多因數分解的函數
-  * gmpy2 -> 有函數可以判斷完全平方數
+  * [gmpy2](https://gmpy2.readthedocs.io/en/latest/mpfr.html) -> 有函數可以判斷完全平方數
+    * `gmpy2.get_context().precision=2048`: Set precision to 2048 bits
   * sage
   * sympy
 * [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool)
@@ -71,6 +72,9 @@ These are mostly from BambooFox
 ### Common Factor Attack
 * 當兩個n有共同質因數
 * gcd(n1,n2)能有效率的分解n1,n2
+
+### Low Public Exponent Attack
+> [Wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Attacks_against_plain_RSA): When encrypting with low encryption exponents (e.g., e = 3) and small values of the m, (i.e., m < n ^ 1/e) the result of m^e is strictly less than the modulus n. In this case, ciphertexts can be easily decrypted by taking the eth root of the ciphertext over the integers.
 
 ### Integer Factorization
 * 只要能分解n = pq
