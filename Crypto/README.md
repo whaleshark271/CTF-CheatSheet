@@ -6,6 +6,7 @@
 * [RSA](#RSA)
   * [RSA - Tools](#RSA---Tools)
   * [Common Factor Attack](#Common-Factor-Attack)
+  * [Low Public Exponent Attack](#Low-Public-Exponent-Attack)
   * [Integer Factorization](#Integer-Factorization)
     * [Pollard's p-1 Algorithm](#Pollard's-p-1-Algorithm)
     * [Fermat's Factorization Method](#Fermat's-Factorization-Method)
@@ -75,6 +76,7 @@ These are mostly from BambooFox
 
 ### Low Public Exponent Attack
 > [Wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Attacks_against_plain_RSA): When encrypting with low encryption exponents (e.g., e = 3) and small values of the m, (i.e., m < n ^ 1/e) the result of m^e is strictly less than the modulus n. In this case, ciphertexts can be easily decrypted by taking the eth root of the ciphertext over the integers.
+* [Reason](https://crypto.stackexchange.com/questions/33561/cube-root-attack-rsa-with-low-exponent) for this attack to work.
 
 ### Integer Factorization
 * 只要能分解n = pq
