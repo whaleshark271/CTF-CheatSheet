@@ -15,6 +15,7 @@
 ## Tools
 * [HackBar](https://chrome.google.com/webstore/detail/hackbar/ejljggkpbkchhfcplgpaegmbfhenekdc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
 * [Wayback Machine](https://archive.org/web/) : Explore web pages saved over time.
+* [RequestBin](https://requestbin.com/) : Get a URL that collects requests you send it. (Can be used with XSS to get admin cookies)
 
 ## F12
 * Check Network header/response
@@ -22,6 +23,11 @@
 
 ## Commands
 * `curl https://...` : 取得網頁內容，螢幕輸出
+
+## HTTP 302
+* **Moved Temporarily**, 可以簡單的理解為該資源原本確實存在，但已經被臨時改變了位置；換而言之，就是請求的資源暫時駐留在不同的URI下。
+* `curl` only redirects when adding parameter `-L`
+* Use `curl` to view the original page
 
 ## Directory Listing
 
