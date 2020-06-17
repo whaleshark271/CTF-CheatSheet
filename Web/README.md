@@ -4,6 +4,7 @@
 * [Tools](#Tools)
 * [F12](#F12)
 * [Commands](#Commands)
+* [HTTP 302](#HTTP-302)
 * [Directory Listing](#Directory-Listing)
 * [Cookie](#Cookie)
 * [SQL Injection](#SQL-Injection)
