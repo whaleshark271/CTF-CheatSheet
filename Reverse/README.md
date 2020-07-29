@@ -99,7 +99,7 @@
   |       y        | # function parameter, ebp + 0xC
   |       x        | # function parameter, ebp + 0x8
   | return address | 
-  | saved ebp      | <= ebp, fixed, used as an anchor
+  |   saved ebp    | <= ebp, fixed, used as an anchor
   ...
   <local variables>
   ...
