@@ -4,6 +4,7 @@
 * [Tools](#Tools)
 * [F12](#F12)
 * [Commands](#Commands)
+* [PHP](#PHP)
 * [HTTP 302](#HTTP-302)
 * [Directory Listing](#Directory-Listing)
 * [Cookie](#Cookie)
@@ -24,6 +25,10 @@
 
 ## Commands
 * `curl https://...` : 取得網頁內容，螢幕輸出
+
+## PHP
+* [Magic Hashes](https://github.com/spaze/hashes)
+  * For php, `'0e123' == '00e456' == '0'` since they all translate to float 0 (0e... here is scientific notation)
 
 ## HTTP 302
 * **Moved Temporarily**, 可以簡單的理解為該資源原本確實存在，但已經被臨時改變了位置；換而言之，就是請求的資源暫時駐留在不同的URI下。
