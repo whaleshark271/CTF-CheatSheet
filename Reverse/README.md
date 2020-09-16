@@ -10,6 +10,7 @@
 
 ## Resources
 * [Reverse Engineering for Beginners by Ophir Harpaz](https://www.begin.re/)
+* [GodBolt CE](https://godbolt.org/): An interactive online compiler which shows the assembly output of compiled code
 
 ## Commands
 * `file <something>` : 查看檔案類型
