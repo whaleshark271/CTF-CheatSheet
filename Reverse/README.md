@@ -107,7 +107,20 @@
   ...
   |                | <= esp, low address
   ```
-
+* Main Memory
+  ```
+  |                | <= low address
+  |----------------|
+  |     Stack      | <= local variables and arguments
+  |----------------|
+  |     Heap       | <= dynamic memory (ex. malloc)
+  |----------------|
+  |     Code       | 
+  |----------------|
+  |     Data       | <= static/global variables
+  |----------------| 
+  |                | <= high address
+  ```
 ## Decompile pyc
 * `pip install uncompyle6`
 * `uncompyle6 -o . <filename>.pyc`
