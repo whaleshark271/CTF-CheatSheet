@@ -11,6 +11,7 @@
 ## Resources
 * [Reverse Engineering for Beginners by Ophir Harpaz](https://www.begin.re/)
 * [GodBolt CE](https://godbolt.org/): An interactive online compiler which shows the assembly output of compiled code
+* [Cutter](https://cutter.re/): Free and Open Source RE Platform powered by radare2
 
 ## Commands
 * `file <something>` : 查看檔案類型
@@ -76,6 +77,10 @@
   1. 切到 Structures 頁面
   2. 看裡面的說明
   3. 新增 struct 並標記裡面的內容
+* Graph View
+  * Blue arrow - unconditional jump
+  * Green arrow - conditional jump where the condition **holds**
+  * Red arrow - conditional jump where the condition **does not hold**
 
 ## Assembly
 * [x86 Assembly Guide](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html)
