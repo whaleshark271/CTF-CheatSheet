@@ -5,6 +5,7 @@
 * [Commands](#Commands)
 * [GDB](#GDB)
 * [IDA PRO](#IDA-PRO)
+* [Character Encoding](#Character-Encoding)
 * [Assembly](#Assembly)
 * [Decompile pyc](#Decompile-pyc)
 
@@ -81,6 +82,15 @@
   * Blue arrow - unconditional jump
   * Green arrow - conditional jump where the condition **holds**
   * Red arrow - conditional jump where the condition **does not hold**
+
+## Character Encoding
+> [source](http://sean1223.blogspot.com/2013/06/asciiansiunicodeutf-8.html)
+* SBCS (Single Byte Character Set)
+  * ASCII - 用1個byte來表示，共有128個字元
+  * ANSI - 也是用1個byte來表示，比起ASCII少了一些控制字元，但多了一些重音字元
+* Wide Characters
+  * Unicode - 用2個bytes來表示，比ASCII多用了一倍的記憶體
+  * UTF-8 - 針對Unicdoe的可變長度字元編碼，用1~3個bytes來表示一個字元，減少記憶體空間的使用量
 
 ## Assembly
 * [x86 Assembly Guide](http://www.cs.virginia.edu/~evans/cs216/guides/x86.html)
