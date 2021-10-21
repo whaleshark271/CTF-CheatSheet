@@ -6,6 +6,9 @@
 * [LSB Steganography](#LSB-Steganography)
 
 ## Tools
+* [Security Onion](https://docs.securityonion.net/en/2.3/about.html) : A Linux distribution for threat hunting, enterprise monitoring, and log management.
+  * Includes security tools such as TheHive, CyberChef, Elasticsearch, Kibana, Zeek, Wazuh, Wireshark, Networkminer, etc.
+* [VirusTotal](https://www.virustotal.com/gui/home/upload) : Analyze suspicious files and URLs to detect types of malware
 * [Binwalk](https://github.com/ReFirmLabs/binwalk) : Search for embedded files or data.
   * `binwalk file` : Displays the embedded data in given file.
   * `binwalk -e file` : Displays and extract the embedded data.
