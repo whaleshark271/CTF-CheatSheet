@@ -37,3 +37,4 @@
 ## Event Log
 * [Windows Event Log](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc722385(v=ws.10)?redirectedfrom=MSDN)
   * Event Viewer
+* [rsyslog](https://en.wikipedia.org/wiki/Rsyslog)
