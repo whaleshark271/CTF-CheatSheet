@@ -4,6 +4,7 @@
 * [Tools](#Tools)
 * [File Carving](#File-Carving)
 * [LSB Steganography](#LSB-Steganography)
+* [Event Log](#Event-Log)
 
 ## Tools
 * [Security Onion](https://docs.securityonion.net/en/2.3/about.html) : A Linux distribution for threat hunting, enterprise monitoring, and log management.
@@ -32,3 +33,7 @@
 * Script from [CSY54 of WXN CTF](https://hackmd.io/@CSY54/WXN_writeup#Forensics-LSB-268-pts-19-solves)
 * What if we don't know the order of the colors?
   * Use [zsteg](https://github.com/zed-0xff/zsteg)
+
+## Event Log
+* [Windows Event Log](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc722385(v=ws.10)?redirectedfrom=MSDN)
+  * Event Viewer
