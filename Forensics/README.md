@@ -1,10 +1,14 @@
 # Forensics
 
 # Table of Contents
+* [Resources](#Resources)
 * [Tools](#Tools)
 * [File Carving](#File-Carving)
 * [LSB Steganography](#LSB-Steganography)
 * [Event Log](#Event-Log)
+
+## Resources
+* Network Forensics: Tracking Hackers Through Cyberspace
 
 ## Tools
 * [Security Onion](https://docs.securityonion.net/en/2.3/about.html) : A Linux distribution for threat hunting, enterprise monitoring, and log management.
@@ -37,4 +41,9 @@
 ## Event Log
 * [Windows Event Log](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-vista/cc722385(v=ws.10)?redirectedfrom=MSDN)
   * Event Viewer
-* [rsyslog](https://en.wikipedia.org/wiki/Rsyslog)
+* Unix/Linux Event Logging
+  * syslog: A client/server protocol designed for transmitting event notifications in an IP network
+    * The default syslog configuration file is usually located at /etc/syslog.conf
+    * syslog receives over UDP by default. The standard syslog port is UDP 514 for remote logging
+  * [syslog-ng](https://en.wikipedia.org/wiki/Syslog-ng): It extends the original syslogd model like using TCP for transport
+  * [rsyslog](https://en.wikipedia.org/wiki/Rsyslog): reliable and extended syslogd
