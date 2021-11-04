@@ -21,7 +21,7 @@
   * `objdump -M intel -d $binary | less`
 * [gdb](https://github.com/whaleshark271/CTF-CheatSheet/tree/master/Reverse#GDB)
 * checksec : 查看某個程式的安全性保護
-  * `checksec $binary`
+  * `checksec -f $binary`
 * gdb-vmmap : 查看目前程式的記憶體分佈，以及rwx權限設定
   * `vmmap`
 * pwntools
@@ -90,12 +90,14 @@
 * ELF採取Lazy binding的機制，在第一次call library函式時，才會去尋找函式真正的位置進行binding
 
 ### GOT & PLT
+* [Shared Library 中 PLT 和 GOT 的使用機制](http://brandon-hy-lin.blogspot.com/2015/12/shared-library-plt-got.html)
 * Global Offset Table
 * GOT 為一個函式指標陣列，存了其他library中function的位置，因為lazy binding的機制，所以一開始只會填上一段plt位置的code
 * 第一次執行時，plt會呼叫_dl_fixup()，才會去尋找真正的function並填入GOT
 * 第二次以後執行時，直接透過GOT找到function位置
 
 ### RELRO
+* [Hardening ELF binaries using Relocation Read-Only (RELRO)](https://www.redhat.com/en/blog/hardening-elf-binaries-using-relocation-read-only-relro)
 * RELocation Read Only
 * No/Partial/Full
   * No RELRO - link map 和 GOT 都可寫
