@@ -27,7 +27,17 @@ An archive of the skills I've learned and some useful tools.
 * [Assembly](Reverse#Assembly)
 * [Decompile pyc](Reverse#Decompile-pyc)
 ## [Web](Web)
-
+* [Tools](Web#Tools)
+* [F12](Web#F12)
+* [Commands](Web#Commands)
+* [PHP](Web#PHP)
+* [HTTP 302](Web#HTTP-302)
+* [Directory Listing](Web#Directory-Listing)
+* [Cookie](Web#Cookie)
+* [SQL Injection](Web#SQL-Injection)
+* [XSS Injection](Web#XSS-Injection)
+* [Command Injection](Web#Command-Injection)
+* [XML Injection](Web#XML-Injection)
 ## Websites
 * BambooFox
   * [Youtube](https://www.youtube.com/channel/UCWIxPblsd5y4QGR1qhX3FGA)
