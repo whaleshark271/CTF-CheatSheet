@@ -15,7 +15,7 @@
 * [XML Injection](#XML-Injection)
 
 ## Tools
-* [HackBar](https://chrome.google.com/webstore/detail/hackbar/ejljggkpbkchhfcplgpaegmbfhenekdc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
+* [HackBar](https://chrome.google.com/webstore/detail/hackbar/ginpbkfigcoaokgflihfhhmglmbchinc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
 * [Wayback Machine](https://archive.org/web/) : Explore web pages saved over time.
 * [RequestBin](https://requestbin.com/) : Get a URL that collects requests you send it. (Can be used with XSS to get admin cookies)
 
