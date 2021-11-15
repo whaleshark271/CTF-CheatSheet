@@ -27,6 +27,8 @@
   * Install : `gem install zsteg`
   * `zsteg -a file` : Runs all the methods on given file.
   * `zsteg -E file` : Extracts data from given payload. ex. `zsteg -E b4,bgr,mb,yX file`
+* [Wireshark](https://www.wireshark.org/)
+* [NetworkMiner](https://www.netresec.com/?page=NetworkMiner)
 
 ## File Carving
 * File carving is the process of reconstructing files by scanning the raw bytes of the disk and reassembling them. This is usually done by examining the header (the first few bytes) and footer (the last few bytes) of a file.
