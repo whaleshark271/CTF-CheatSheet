@@ -3,7 +3,7 @@
 # Table of Contents
 * [Tools](#Tools)
 * [F12](#F12)
-* [Commands](#Commands)
+* [Content Discovery](#Content-Discovery)
 * [PHP](#PHP)
 * [HTTP 302](#HTTP-302)
 * [Directory Listing](#Directory-Listing)
@@ -18,6 +18,10 @@
 * [HackBar](https://chrome.google.com/webstore/detail/hackbar/ginpbkfigcoaokgflihfhhmglmbchinc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
 * [Wayback Machine](https://archive.org/web/) : Explore web pages saved over time.
 * [RequestBin](https://requestbin.com/) : Get a URL that collects requests you send it. (Can be used with XSS to get admin cookies)
+* [Wappalyzer](https://www.wappalyzer.com/): Identify technologies on websites.
+* [ffuf](https://github.com/ffuf/ffuf): Fast web fuzzer written in Go.
+* [dirb](https://www.kali.org/tools/dirb/): Scan the web server for directories using a dictionary file.
+* [gobuster](https://github.com/OJ/gobuster): Directory/File, DNS and VHost busting tool written in Go.
 
 ## F12
 * Check Network header/response
@@ -26,8 +30,35 @@
   * Use "Pretty Print" option (looks like 2 braces {}) to make minimised file readable
   * Click on line number to set break points
 
-## Commands
-* `curl https://...` : 取得網頁內容，螢幕輸出
+## Content Discovery
+* Manual
+  * /robots.txt: Used by websites to communicate with web crawlers about which areas of the website should not be processed or scanned.
+  * Favicon: The small picture in the website tab. If the website developer doesn't change it to a custom one, the favicon of the framework used by the website might be displayed.
+    * `curl <favicon url> | md5sum`
+    * Then lookup the md5 hash in [OWASP favicon database](https://wiki.owasp.org/index.php/OWASP_favicon_database)
+  * /sitemap.xml: Gives a list of every file the website owner wishes to be listed on a search engine.
+  * HTTP headers: Use `curl <website url> -v` to get the headers.
+  * Framework: Check the framework documentation.
+* OSINT
+  * Google Hacking/Dorking: Google's advanced search engine
+    * site:example.com
+    * inurl:admin
+    * filetype:pdf
+    * intitle:admin
+  * [Wayback Machine](https://archive.org/web/): Explore web pages saved over time.
+  * [Wappalyzer](https://www.wappalyzer.com/): Identify technologies on websites.
+  * Github
+  * S3 Buckets: Storage service provided by Amazon AWS. The owner of the files can set permission to public, private and writable.
+    * http(s)://{name}.s3.amazonaws.com
+    * Common terms: {name}-assets, {name}-www, {name}-public, {name}-private, ...
+* Automated
+  * [SecLists](https://github.com/danielmiessler/SecLists): A wordlist that includes usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and more.
+  * [ffuf](https://github.com/ffuf/ffuf)
+    * `fuff -w <wordlist path> -u <url>`
+  * [dirb](https://www.kali.org/tools/dirb/)
+    * `dirb <url> <wordlist path>` 
+  * [gobuster](https://github.com/OJ/gobuster)
+    * `gobuster dir --url <url> -w <wordlist path>`
 
 ## PHP
 * [Magic Hashes](https://github.com/spaze/hashes)
