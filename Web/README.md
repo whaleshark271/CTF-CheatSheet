@@ -22,6 +22,9 @@
 ## F12
 * Check Network header/response
 * Use console to do js function overwrite
+* Debugger
+  * Use "Pretty Print" option (looks like 2 braces {}) to make minimised file readable
+  * Click on line number to set break points
 
 ## Commands
 * `curl https://...` : 取得網頁內容，螢幕輸出
