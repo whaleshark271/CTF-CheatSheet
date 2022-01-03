@@ -4,6 +4,7 @@
 * [Tools](#Tools)
 * [F12](#F12)
 * [Content Discovery](#Content-Discovery)
+* [Subdomain Enumeration](#Subdomain-Enumeration)
 * [PHP](#PHP)
 * [HTTP 302](#HTTP-302)
 * [Directory Listing](#Directory-Listing)
@@ -22,6 +23,8 @@
 * [ffuf](https://github.com/ffuf/ffuf): Fast web fuzzer written in Go.
 * [dirb](https://www.kali.org/tools/dirb/): Scan the web server for directories using a dictionary file.
 * [gobuster](https://github.com/OJ/gobuster): Directory/File, DNS and VHost busting tool written in Go.
+* [dnsrecon](https://www.kali.org/tools/dnsrecon/): DNS enumeration script.
+* [Sublist3r](https://github.com/aboul3la/Sublist3r): Fast subdomains enumeration tool for penetration testers.
 
 ## F12
 * Check Network header/response
@@ -59,6 +62,18 @@
     * `dirb <url> <wordlist path>` 
   * [gobuster](https://github.com/OJ/gobuster)
     * `gobuster dir --url <url> -w <wordlist path>`
+
+## Subdomain Enumeration
+* https://en.wikipedia.org -> `en` is a subdomain of `wikipedia.org`
+* SSL/TLS Certificate Transparency (CT) logs: Publicly accessible logs of every SSL/TLS certificate created for a domain name. The purpose is to stop malicious and accidentally made certificates from being used.
+  * https://crt.sh/
+  * https://transparencyreport.google.com/https/certificates
+* `-site:www.domain.com site:*.domain.com` would only contain results leading to domain.com but excluding any links to www.domain.com
+* DNS bruteforce: `dnsrecon -t brt -d <domain>`
+* `./sublist3r.py -d <domain>`
+* Some subdomains aren't hosted in publically accessible DNS results, such as development versions or administration portals. These DNS records could be kept on a private DNS server or recorded on the developer's machines in /etc/hosts file (C:\windows\system32\drivers\etc\hosts for Windows). The server knows which website the client wants from the **Host** header.
+  * `fuff -w <wordlist path> -H "Host:FUZZ.<domain>" -u http://MACHINE_IP`: The -H switch adds/edits a header, using the FUZZ keyword in the space where a subdomain would normally go.
+  * Add -fs {size} to filter out any results of the specified size.
 
 ## PHP
 * [Magic Hashes](https://github.com/spaze/hashes)
