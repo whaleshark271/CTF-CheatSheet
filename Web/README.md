@@ -5,6 +5,7 @@
 * [F12](#F12)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
+* [FFUF](#FFUF)
 * [PHP](#PHP)
 * [HTTP 302](#HTTP-302)
 * [Directory Listing](#Directory-Listing)
@@ -57,7 +58,7 @@
 * Automated
   * [SecLists](https://github.com/danielmiessler/SecLists): A wordlist that includes usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and more.
   * [ffuf](https://github.com/ffuf/ffuf)
-    * `fuff -w <wordlist path> -u <url>`
+    * `fuff -w <wordlist path> -u <url>/FUZZ`
   * [dirb](https://www.kali.org/tools/dirb/)
     * `dirb <url> <wordlist path>` 
   * [gobuster](https://github.com/OJ/gobuster)
@@ -74,6 +75,18 @@
 * Some subdomains aren't hosted in publically accessible DNS results, such as development versions or administration portals. These DNS records could be kept on a private DNS server or recorded on the developer's machines in /etc/hosts file (C:\windows\system32\drivers\etc\hosts for Windows). The server knows which website the client wants from the **Host** header.
   * `fuff -w <wordlist path> -H "Host:FUZZ.<domain>" -u http://MACHINE_IP`: The -H switch adds/edits a header, using the FUZZ keyword in the space where a subdomain would normally go.
   * Add -fs {size} to filter out any results of the specified size.
+
+## FFUF
+* `-w`: Wordlist file path and (optional) keyword separated by colon.
+  * /path/to/wordlist:KEYWORD
+* `-u`: Target URL.
+* `-H`: Header `"Name: Value"`, separated by colon.
+* `-X`: HTTP method to use. Default value is GET.
+* `-d`: POST data.
+* `-fs`: Filter HTTP response size.
+* `-fc`: Filter HTTP status codes from response.
+* `-mr`: Match regexp.
+* [Example Usage](https://github.com/ffuf/ffuf#example-usage)
 
 ## PHP
 * [Magic Hashes](https://github.com/spaze/hashes)
