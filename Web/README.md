@@ -7,6 +7,7 @@
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
 * [PHP](#PHP)
+* [IDOR](#IDOR)
 * [HTTP 302](#HTTP-302)
 * [Directory Listing](#Directory-Listing)
 * [Cookie](#Cookie)
@@ -94,7 +95,12 @@
 * `$_REQUEST` variable
   * An associative array that by default contains the contents of `$_GET`, `$_POST` and `$_COOKIE`.
   * If the same key name is used for both the query string and POST data, it will favour POST data field.
-  * Can use `curl -d <POST data>` to add a parameter and overwrite the query string value if the application logic uses `$_REQUEST` to retrieve data.  
+  * Can use `curl -d <POST data>` to add a parameter and overwrite the query string value if the application logic uses `$_REQUEST` to retrieve data.
+
+## IDOR
+* Insecure Direct Object Reference, a type of access control vulnerability
+* It can occur when input data is not validated on the server-side to confirm the requested object belongs to the user requesting it
+* Example: Changing the id number in http://online-service.thm/profile?user_id=1305
 
 ## HTTP 302
 * **Moved Temporarily**, 可以簡單的理解為該資源原本確實存在，但已經被臨時改變了位置；換而言之，就是請求的資源暫時駐留在不同的URI下。
