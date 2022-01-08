@@ -236,6 +236,21 @@ Hacker                                                             website.thm  
   * Polyglots
 
 ## Command Injection
-* `ping $whoami`
+* PHP functions that interact with the operating system to execute commands via shell: `exec`, `passthru`, `system`
+* The shell operators `;`, `&`, `|`, `&&` will combine two (or more) system commands and execute them both
+* Blind Command Injection: No output noticeable
+  * Use payloads that cause some time delay: `ping` and `sleep`. Using `ping` will make the application hang for x seconds in relation to how many pings specified.
+  * Forcing output: `>` + `cat`
+  * `curl http://vulnerable.app/process.php%3Fsearch%3DThe%20Beatles%3B%20whoami`
+* Verbose Command Injection: `ping` or `whoami`
+* Useful Payloads
+  * Linux
+    * `whoami`, `ls`, `ping`, `sleep`, `nc`
+  * Windows
+    * `whoami`, `dir`, `ping`, `timeout` 
+* Remediation
+  * `<input type="text" id="ping" name="ping" pattern="[0-9]+"></input` will only accept a specific pattern of characters (0-9)
+  * Sanitisation: `<?php if(!filter_input(INPUT_GET, "number", FILTER_VALIDATE_NUMBER)) {}` 
+* [Cheat sheet](https://github.com/payloadbox/command-injection-payload-list)
 
 ## XML Injection
