@@ -161,6 +161,8 @@ Hacker                                                             website.thm  
 * 選取特定資料 : `'or 1 = 1 limit 1,1 -- `
   * 從offset=1開始選取前50筆資料(略過最前面1筆)
   * `limit 1,50`
+* Wildcard `%`
+  * `select * from users where username like 'a%';`: Returns any rows with username beginning with the letter a. 
 * Blind sql injection
   * 有時候資料庫查詢只會顯示成功或失敗，不會顯示資料
   * 透過True/Flase回傳去判斷
@@ -182,6 +184,7 @@ Hacker                                                             website.thm  
   * LIMIT 0,1 => LIMIT 1 OFFSET 0
 * `@@version` : 同`version()`，回傳資料庫版本
 * `user()` : 回傳使用者名稱
+* `database()`: Get database name
 * `information_schema`
   * SQL內建的資料庫，會儲存資料庫內部的資訊，例如所有table/column name
   * 透過leak information_schema取得想要的資料庫
