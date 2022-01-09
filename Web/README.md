@@ -28,6 +28,7 @@
 * [dnsrecon](https://www.kali.org/tools/dnsrecon/): DNS enumeration script.
 * [Sublist3r](https://github.com/aboul3la/Sublist3r): Fast subdomains enumeration tool for penetration testers.
 * [xsshunter](https://xsshunter.com/)
+* [Burp Suite](https://portswigger.net/burp) + [FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/)
 
 ## F12
 * Check Network header/response
