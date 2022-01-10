@@ -28,7 +28,16 @@
 * [dnsrecon](https://www.kali.org/tools/dnsrecon/): DNS enumeration script.
 * [Sublist3r](https://github.com/aboul3la/Sublist3r): Fast subdomains enumeration tool for penetration testers.
 * [xsshunter](https://xsshunter.com/)
-* [Burp Suite](https://portswigger.net/burp) + [FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/)
+* [Burp Suite](https://portswigger.net/burp)
+  * Proxy
+    * [FoxyProxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/)
+    * Scoping: In "Target" tab, right-click the target and choose "Add To Scope" to disable logging of out of scope traffic; Go to "Proxy Options" and select "And URL Is in target scope" from the Intercept Client Requests section so proxy only intercept the target.
+  * Repeater: Craft and/or relay intercepted requests to a target at will.
+  * Intruder: Burp's builtin fuzzing tool.
+    * Sniper: Takes one set of payloads. Good for single-position attacks.
+    * Battering Ram: Takes one set of payloads. Puts the same payload in every position.
+    * Pitchfork: Takes up to 20 sets of payloads and uses one payload set per position and iterates through them all once. It will stop when one of the lists is complete.
+    * Cluster Bomb: Takes up to 20 sets of payloads and uses one payload set per position and iterates through each payload set individually (iterate through every possible combination of payloads).
 
 ## F12
 * Check Network header/response
