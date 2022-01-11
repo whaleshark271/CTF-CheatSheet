@@ -38,6 +38,7 @@
     * Battering Ram: Takes one set of payloads. Puts the same payload in every position.
     * Pitchfork: Takes up to 20 sets of payloads and uses one payload set per position and iterates through them all once. It will stop when one of the lists is complete.
     * Cluster Bomb: Takes up to 20 sets of payloads and uses one payload set per position and iterates through each payload set individually (iterate through every possible combination of payloads).
+  * Sequencer: Measure the entropy of "tokens".
 
 ## F12
 * Check Network header/response
