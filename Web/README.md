@@ -3,6 +3,7 @@
 # Table of Contents
 * [Tools](#Tools)
 * [F12](#F12)
+* [Recon](#Recon)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
@@ -46,6 +47,25 @@
 * Debugger
   * Use "Pretty Print" option (looks like 2 braces {}) to make minimised file readable
   * Click on line number to set break points
+
+## Recon
+* Passive Recon
+  * `whois DOMAIN_NAME`: The WHOIS server replies with various information related to the domain requested.
+  * `nslookup OPTIONS DOMAIN_NAME SERVER`: Name Server Look Up, ex. `nslookup -type=A google.com 1.1.1.1`
+    * Options
+      * A: IPv4 Addresses
+      * AAAA: IPv6 Addresses
+      * CNAME: Canonical Name
+      * MX: Mail Servers
+      * SOA: Start of Authority
+      * TXT: TXT Records
+    * Server
+      * Cloudflare public DNS server: 1.1.1.1 and 1.0.0.1
+      * Google public DNS server: 8.8.8.8 and 8.8.4.4
+      * Quad9 public DNS server: 9.9.9.9 and 149.112.112.112
+  * `dig @SERVER DOMAIN_NAME TYPE`: Domain Information Groper, ex. `dig google.com MX` 
+  * [DNSDumpster](https://dnsdumpster.com/): A free domain research tool that can discover hosts related to a domain.
+  * [Shodan.io](https://www.shodan.io/): It tries to connect to every device reachable online to build a search engine of connected "things".
 
 ## Content Discovery
 * Manual
