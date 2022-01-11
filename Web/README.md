@@ -23,6 +23,7 @@
 * [Wayback Machine](https://archive.org/web/) : Explore web pages saved over time.
 * [RequestBin](https://requestbin.com/) : Get a URL that collects requests you send it. (Can be used with XSS to get admin cookies)
 * [Wappalyzer](https://www.wappalyzer.com/): Identify technologies on websites.
+* [User-Agent Switcher and Manager](https://addons.mozilla.org/en-US/firefox/addon/user-agent-string-switcher/)
 * [ffuf](https://github.com/ffuf/ffuf): Fast web fuzzer written in Go.
 * [dirb](https://www.kali.org/tools/dirb/): Scan the web server for directories using a dictionary file.
 * [gobuster](https://github.com/OJ/gobuster): Directory/File, DNS and VHost busting tool written in Go.
@@ -66,6 +67,12 @@
   * `dig @SERVER DOMAIN_NAME TYPE`: Domain Information Groper, ex. `dig google.com MX` 
   * [DNSDumpster](https://dnsdumpster.com/): A free domain research tool that can discover hosts related to a domain.
   * [Shodan.io](https://www.shodan.io/): It tries to connect to every device reachable online to build a search engine of connected "things".
+* Active Recon
+  * `ping`: ex. `ping -c 5 MACHINE_IP`
+  * `traceroute MACHINE_IP`
+  * `telnet MACHINE_IP PORT`
+  * `nc MACHINE_IP PORT`
+    * Listen on a port: `nc -vnlp PORT`
 
 ## Content Discovery
 * Manual
