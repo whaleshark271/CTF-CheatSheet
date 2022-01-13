@@ -143,6 +143,19 @@
   * Fragment IP data into 16 bytes: `-ff`
   * `--source-port PORT_NUM`: Specify source port number
   * `--data-length NUM`: Append random data to reach given length
+* Post Port Scans
+  * `-sV`: Determine service/version info on open ports
+  * `-sV --version-light`: Try the most likely probes (2)
+  * `-sV --version-all`: Try all available probes (9)
+  * `-O`: Detect OS (might not be accurate)
+  * `--traceroute`: Run traceroute to target (It starts with high TTL and keeps decreasing it unlike the standard traceroute)
+  * `--script=SCRIPTS`: Nmap scripts to run
+  * `-sC` or `--script=default`: Run default scripts
+  * `-A`: Equivalent to `-sV -O -sC --traceroute`
+  * `-oN`: Save output in normal format
+  * `-oG`: Save output in grepable format
+  * `-oX`: Save output in XML format
+  * `-oA`: Save output in normal, grepable, XML format
 
 ## Content Discovery
 * Manual
