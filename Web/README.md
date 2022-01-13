@@ -4,6 +4,7 @@
 * [Tools](#Tools)
 * [F12](#F12)
 * [Recon](#Recon)
+* [Nmap](#Nmap)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
@@ -73,6 +74,75 @@
   * `telnet MACHINE_IP PORT`
   * `nc MACHINE_IP PORT`
     * Listen on a port: `nc -vnlp PORT`
+
+## Nmap
+* `-n`: no DNS lookup
+* `-R`: reverse-DNS lookup for all hosts
+* `--dns-servers DNS_SERVER`: Use a specific DNS server
+* `-sn`: host discovery only, no port-scanning
+* `-sL`: List hosts that Nmap will scan without scanning them. `nmap -sL TARGETS` where TARGETS can be `MACHINE_IP scanme.nmap.org example.com` or `10.11.12.15-20` or `MACHINE_IP/30`
+* `--reason`: Explains how nmap made its conclusion
+* `-v`: verbose
+* `-vv`: Very verbose
+* `-d`: Debugging
+* `-dd`: More details for debugging
+* Live Host Discovery
+  * ARP Scan: `sudo nmap -PR -sn MACHINE_IP/24`
+    * This is possible only if you are on the same subnet as the target systems. ARP query (link layer) is used to get the MAC address.
+  * ICMP Echo Scan: `sudo nmap -PE -sn MACHINE_IP/24`
+    * Respond to ping (ICMP Type 8/Echo) with a ping reply (ICMP Type 0)
+  * ICMP Timestamp Scan: `sudo nmap -PP -sn MACHINE_IP/24`
+    * Respond to timestamp request (ICMP Type 13) with timestamp reply (ICMP Type 14)
+  * ICMP Address Mask Scan: `sudo nmap -PM -sn MACHINE_IP/24`
+    * Respond to address mask queries (ICMP Type 17) with address mask reply (ICMP Type 18)
+  * TCP SYN Ping Scan: `sudo nmap -P22,80,443 -sn MACHINE_IP/30`
+    * An open port will reply with a SYN/ACK while a closed port will reply with RST
+    * Privileged users don't need to complete the 3-way handshake (SYN -> SYN/ACK -> RST)
+  * TCP ACK Ping Scan: `sudo nmap -PA22,80,443 -sn MACHINE_IP/30`
+    * Live host will reply with RST
+  * UDP Ping Scan: `sudo nmap -PU53,161,162 -sn MACHINE_IP/30`
+    * An open port will reply with nothing while a closed port will reply with ICMP Destination Unreachable (Type 3, Code 3)
+* Basic Port Scans
+  * TCP Connect Scan: `nmap -sT MACHINE_IP`
+    * It conducts scans by completing the TCP 3-way handshake, attempt to connect to the 1000 most common ports by default
+  * TCP Syn Scan: `sudo nmap -sS MACHINE_IP`
+    * It tears down the connection once it receives a response from server (SYN -> SYN/ACK -> RST)
+  * UDP Scan: `sudo nmap -sU MACHINE_IP` 
+    * * An open port will reply with nothing while a closed port will reply with ICMP Destination Unreachable (Type 3, Code 3)
+  * `-p-`: all ports
+  * `-p1-1023`: Scan ports 1 to 1023
+  * `-F`: 100 most common ports
+  * `-r`: Scan ports in consecutive order
+  * `-T<0-5>`: -T0 is the slowest and T5 the fastest (0:paranoid, 1:sneaky, 2:polite, 3:normal, 4:aggressive, 5:insane)
+  * `--max-rate 50`: rate <= 50 packets/sec
+  * `--min-rate 15`: rate >= 15 packets/sec
+  * `--min-parallelism 100`: at least 100 probes in parallel
+* Advanced Port Scans
+  * TCP Null Scan: `sudo nmap -sN MACHINE_IP`
+    * No flag is set. An open port will reply with nothing (or firewall blocked the packet) while a closed port will reply with RST,ACK.
+  * TCP FIN Scan: `sudo nmap -sF MACHINE_IP`
+    * FIN flag is set. An open port will reply with nothing (or firewall blocked the packet) while a closed port will reply with RST,ACK.
+  * TCP Xmas Scan: `sudo nmap -sX MACHINE_IP`
+    * FIN,PSH,URG flags are set. An open port will reply with nothing (or firewall blocked the packet) while a closed port will reply with RST,ACK.
+  * The 3 scans above are efficient towards a stateless firewall because a stateless firewall will check if the SYN flag is set to detect a connection attempt. A stateful firewall will practically block all such crafted packets.
+  * TCP Maimon Scan: `sudo nmap -sM MACHINE_IP`
+    * FIN,ACK flags are set. The target should send RST whether port is open or close. Certain BSD-derived systems drop the packet if it is an open port. 
+  * TCP ACK Scan: `sudo nmap -sA MACHINE_IP`
+    * ACK flag is set. The target will responde with RST whether port is open or close. This scan is usefull to detect a firewall because you will learn which ports were not blocked by the firewall.
+  * TCP Window Scan: `sudo nmap -sW MACHINE_IP`
+    * It examines the TCP Window field of the RST packets returned, revealing open ports on certain systems. The target will responde with RST whether port is open or close.
+  * Custom TCP Scan: `sudo nmap --scanflags URGACKPSHRSTSYNFIN MACHINE_IP`
+  * Spoofed Source IP: `sudo nmap -S SPOOFED_IP MACHINE_IP`
+  * Spoofed MAC Address: `--spoof-mac SPOOFED_MAC`
+  * Decoy Scan: `nmap -D DECOY_IP,ME MACHINE_IP`
+  * Idle (Zombie) Scan: `sudo nmap -sI ZOMBIE_IP MACHINE_IP`
+    1. Trigger the idle host to respond and record current IP ID on the idle host
+    2. Send a SYN packet to a TCP port on the target (If target respond with RST, IP ID is not incremented; If target respond with SYN/ACK and idle host respond with RST, IP ID is incremented by 1)
+    3. Trigger the idle machine to respond again and compare the new IP ID. If difference is 1, then the port is closed or filtered; if difference is 2, then the port is open
+  * Fragment IP data into 8 bytes: `-f`
+  * Fragment IP data into 16 bytes: `-ff`
+  * `--source-port PORT_NUM`: Specify source port number
+  * `--data-length NUM`: Append random data to reach given length
 
 ## Content Discovery
 * Manual
