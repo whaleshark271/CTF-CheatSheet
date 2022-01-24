@@ -46,6 +46,7 @@
 * [Ettercap](https://www.ettercap-project.org/): For MITM attacks.
 * [Bettercap](https://www.bettercap.org/): For network reconnaissance and MITM attacks.
 * [Hydra](https://github.com/vanhauser-thc/thc-hydra): Password cracker.
+  * `hydra -l <username> -P <wordlist> -s <port> <server> <service>`
 
 ## F12
 * Check Network header/response
