@@ -5,6 +5,7 @@
 * [F12](#F12)
 * [Recon](#Recon)
 * [Nmap](#Nmap)
+* [Protocols](#Protocols)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
@@ -42,6 +43,9 @@
     * Pitchfork: Takes up to 20 sets of payloads and uses one payload set per position and iterates through them all once. It will stop when one of the lists is complete.
     * Cluster Bomb: Takes up to 20 sets of payloads and uses one payload set per position and iterates through each payload set individually (iterate through every possible combination of payloads).
   * Sequencer: Measure the entropy of "tokens".
+* [Ettercap](https://www.ettercap-project.org/): For MITM attacks.
+* [Bettercap](https://www.bettercap.org/): For network reconnaissance and MITM attacks.
+* [Hydra](https://github.com/vanhauser-thc/thc-hydra): Password cracker.
 
 ## F12
 * Check Network header/response
@@ -156,6 +160,14 @@
   * `-oG`: Save output in grepable format
   * `-oX`: Save output in XML format
   * `-oA`: Save output in normal, grepable, XML format
+
+## Protocols
+* FTP: default port 21, File Transfer, Cleartext
+* HTTP: default port 80, Website, Cleartext
+* IMAP: default port 143, Email (Mail Delivery Agent), Cleartext
+* POP3: default port 110, Email (Mail Delivery Agent), Cleartext
+* SMTP: default port 25, Email (Mail Transfer Agent), Cleartext
+* Telnet: default port 23, Remote Access, Cleartext
 
 ## Content Discovery
 * Manual
