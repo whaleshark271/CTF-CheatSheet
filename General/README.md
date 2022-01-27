@@ -24,6 +24,7 @@
 * `show options`
 * `setg`: Set values that will be used for all modules
 * `exploit` or `run`
+* Ctrl+Z: Make the session into a background task
 * Metasploit Database
   * First, start a database
   * `msfdb init`
