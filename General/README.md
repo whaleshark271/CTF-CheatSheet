@@ -12,6 +12,7 @@
 * [National Vulnerability Database](https://nvd.nist.gov/vuln/full-listing)
 * [Exploit-DB](https://www.exploit-db.com/)
 * [Rapid7](https://www.rapid7.com/db/)
+* [GTFOBins](https://gtfobins.github.io/): Bypass local security restrictions
 
 ## Metasploit
 * `msfconsole`: The command line interface
