@@ -36,6 +36,7 @@
   * `hosts -R`: Once host information is stored in database, use this command to add the value to the RHOSTS parameter
 
 ## Reverse Shell and Bind Shell
+* [Reverse Shell Cheat Sheet](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 * Reverse Shell
   * The attacking machine opens a listner and the target machine connects back to it
 * Bind Shell
