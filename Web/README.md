@@ -43,6 +43,12 @@
     * Pitchfork: Takes up to 20 sets of payloads and uses one payload set per position and iterates through them all once. It will stop when one of the lists is complete.
     * Cluster Bomb: Takes up to 20 sets of payloads and uses one payload set per position and iterates through each payload set individually (iterate through every possible combination of payloads).
   * Sequencer: Measure the entropy of "tokens".
+  * [Collaborator](https://portswigger.net/burp/documentation/collaborator)
+    1. Burp sends a payload to the application containing a URL that uses a random subdomain of one of the Collaborator domains, for example: `param=http://f294gchg2la...r9gf.oastify.com/`
+    2. Due to its programmed behavior (intended or otherwise), the application fetches the contents of the URL. To do this, it will first perform a DNS lookup on the random subdomain, and then perform an HTTP request.
+    3. The DNS lookup and the HTTP request are received by the Collaborator server. Both interactions contain the random data that Burp placed into the Collaborator subdomain.
+    4. Burp polls the Collaborator server and asks: "Did you receive any interactions for my payload?", and the Collaborator returns the interaction details.
+    5. Burp reports the external service interaction to the Burp user, including the full interaction messages that were captured by the Collaborator server.
 * [Ettercap](https://www.ettercap-project.org/): For MITM attacks.
 * [Bettercap](https://www.bettercap.org/): For network reconnaissance and MITM attacks.
 * [Hydra](https://github.com/vanhauser-thc/thc-hydra): Password cracker.
