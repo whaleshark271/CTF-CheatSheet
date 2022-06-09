@@ -182,6 +182,13 @@
   * Control resources the user agent is allowed to load for a given page
   * Helps guard against cross-site scripting attacks
   * `unsafe-inline`: Allow use of inline resources
+* [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) (CORS)
+  * Allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources
+  * `Access-Control-Allow-Origin`: Doesn't allow specifying multiple origins, can only specify one origin or wildcard
+    * Specify multiple origin -> Dynamic generation - Dynamically inspect incoming origin header from the browser and decide if it is trusted
+  * `Access-Control-Allow-Credentials`
+    * If a request includes a credential (most commonly a `Cookie` header) and the response includes an `Access-Control-Allow-Origin: *` header (that is, with the wildcard), the browser will block access to the response, and report a CORS error in the devtools console.
+  * Null origin
 
 ## Content Discovery
 * Manual
