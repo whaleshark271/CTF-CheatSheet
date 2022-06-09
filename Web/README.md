@@ -6,6 +6,7 @@
 * [Recon](#Recon)
 * [Nmap](#Nmap)
 * [Protocols](#Protocols)
+* [Headers](#Headers)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
@@ -175,6 +176,12 @@
 * POP3: default port 110, Email (Mail Delivery Agent), Cleartext
 * SMTP: default port 25, Email (Mail Transfer Agent), Cleartext
 * Telnet: default port 23, Remote Access, Cleartext
+
+## Headers
+* [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (CSP)
+  * Control resources the user agent is allowed to load for a given page
+  * Helps guard against cross-site scripting attacks
+  * `unsafe-inline`: Allow use of inline resources
 
 ## Content Discovery
 * Manual
