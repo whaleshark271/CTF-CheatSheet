@@ -13,6 +13,7 @@
 * [PHP](#PHP)
 * [IDOR](#IDOR)
 * [HTTP 302](#HTTP-302)
+* [HTTP Parameter Pollution](HTTP-Parameter-Pollution)
 * [File Inclusion](#File-Inclusion)
 * [SSRF](#SSRF)
 * [SQL Injection](#SQL-Injection)
@@ -261,6 +262,11 @@
 * **Moved Temporarily**, 可以簡單的理解為該資源原本確實存在，但已經被臨時改變了位置；換而言之，就是請求的資源暫時駐留在不同的URI下。
 * `curl` only redirects when adding parameter `-L`
 * Use `curl` to view the original page
+
+## HTTP Parameter Pollution
+* [Testing for HTTP Parameter Pollution](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/04-Testing_for_HTTP_Parameter_Pollution)
+* Test the application's response to receiving multiple HTTP parameters with the same name
+* Some servers concatenate all occurences with a comma, others take the last occurence
 
 ## File Inclusion
 * Path (Directory) Traversal: It occurs when user input is not validated and passed to a function such as `file_get_contents`.
