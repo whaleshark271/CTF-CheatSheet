@@ -21,6 +21,7 @@
 * [XSS Injection](#XSS-Injection)
 * [Command Injection](#Command-Injection)
 * [XML Injection](#XML-Injection)
+* [AWS](#AWS)
 
 ## Tools
 * [HackBar](https://chrome.google.com/webstore/detail/hackbar/ginpbkfigcoaokgflihfhhmglmbchinc) : A simple security audit / Penetration test tool for testing sql injections, XSS holes and site security.
@@ -417,3 +418,6 @@ Hacker                                                             website.thm  
 * [Cheat sheet](https://github.com/payloadbox/command-injection-payload-list)
 
 ## XML Injection
+
+## AWS
+* [Confused Deputy](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html)
