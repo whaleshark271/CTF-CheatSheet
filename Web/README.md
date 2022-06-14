@@ -346,6 +346,15 @@ Hacker                                                             website.thm  
 * `@@version` : 同`version()`，回傳資料庫版本
 * `user()` : 回傳使用者名稱
 * `database()`: Get database name
+* Determine number of columns
+  * `' ORDER BY 1--`
+  * `' ORDER BY 2--`
+  * `' ORDER BY 2--`
+  * etc.
+  * `' UNION SELECT NULL--`
+  * `' UNION SELECT NULL,NULL--`
+  * `' UNION SELECT NULL,NULL,NULL--`
+  * etc.
 * `information_schema`
   * SQL內建的資料庫，會儲存資料庫內部的資訊，例如所有table/column name
   * 透過leak information_schema取得想要的資料庫
