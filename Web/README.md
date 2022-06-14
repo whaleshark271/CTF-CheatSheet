@@ -355,6 +355,10 @@ Hacker                                                             website.thm  
   * `' UNION SELECT NULL,NULL--`
   * `' UNION SELECT NULL,NULL,NULL--`
   * etc.
+* Determine data type
+  * `' UNION SELECT 'a',NULL,NULL--`
+  * `' UNION SELECT NULL,'a',NULL--`
+  * `' UNION SELECT NULL,NULL,'a'--`
 * `information_schema`
   * SQL內建的資料庫，會儲存資料庫內部的資訊，例如所有table/column name
   * 透過leak information_schema取得想要的資料庫
