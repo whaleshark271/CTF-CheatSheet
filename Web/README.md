@@ -17,7 +17,6 @@
 * [File Inclusion](#File-Inclusion)
 * [SSRF](#SSRF)
 * [SQL Injection](#SQL-Injection)
-  * [MySQL](#MySQL)
 * [XSS Injection](#XSS-Injection)
 * [Command Injection](#Command-Injection)
 * [XML Injection](#XML-Injection)
