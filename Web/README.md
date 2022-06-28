@@ -7,13 +7,14 @@
 * [Nmap](#Nmap)
 * [Protocols](#Protocols)
 * [Headers](#Headers)
+* [OAuth 2.0](#OAuth-2.0)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
 * [PHP](#PHP)
 * [IDOR](#IDOR)
 * [HTTP 302](#HTTP-302)
-* [HTTP Parameter Pollution](HTTP-Parameter-Pollution)
+* [HTTP Parameter Pollution](#HTTP-Parameter-Pollution)
 * [File Inclusion](#File-Inclusion)
 * [SSRF](#SSRF)
 * [SQL Injection](#SQL-Injection)
@@ -190,6 +191,11 @@
   * `Access-Control-Allow-Credentials`
     * If a request includes a credential (most commonly a `Cookie` header) and the response includes an `Access-Control-Allow-Origin: *` header (that is, with the wildcard), the browser will block access to the response, and report a CORS error in the devtools console.
   * Null origin
+
+## OAuth 2.0
+* [OAuth grant types](https://portswigger.net/web-security/oauth/grant-types)
+* Recon
+  * Send GET request to `/.well-known/oauth-authorization-server` and `/.well-known/openid-configuration` for information such as additional features
 
 ## Content Discovery
 * Manual
