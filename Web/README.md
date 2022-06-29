@@ -196,6 +196,17 @@
 * [OAuth grant types](https://portswigger.net/web-security/oauth/grant-types)
 * Recon
   * Send GET request to `/.well-known/oauth-authorization-server` and `/.well-known/openid-configuration` for information such as additional features
+* Insufficient URI validation
+* Referer header leaks code and state: After authorization code grant there should be no code and state in the referer header.
+* Access token stored in browser history
+* Access token leakage
+* Client secret leakage
+* State
+  * Lack of state
+  * Not enough entropy
+  * Reuse
+  * Invalid state validation: Change state to an invalid value or delete it.
+* Implicit grant coercion: Change the `response_type` from `code` to `token`.  
 
 ## Content Discovery
 * Manual
