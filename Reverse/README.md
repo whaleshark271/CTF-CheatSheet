@@ -13,6 +13,7 @@
 * [Reverse Engineering for Beginners by Ophir Harpaz](https://www.begin.re/)
 * [GodBolt CE](https://godbolt.org/): An interactive online compiler which shows the assembly output of compiled code
 * [Cutter](https://cutter.re/): Free and Open Source RE Platform powered by radare2
+* [Eicar Anti Malware Test File](https://www.eicar.org/download-anti-malware-testfile/)
 
 ## Commands
 * `file <something>` : 查看檔案類型
