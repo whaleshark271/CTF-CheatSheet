@@ -422,9 +422,15 @@ Hacker                                                             website.thm  
     2. Victim requests page from victim server
     3. Victim receives page with malicious content
     4. Victim sends valuable data to attacker
-  * DOM Based XSS: The JavaScript execution happens directly in the browser without any new pages being loaded or data submitted to backend code.
+  * DOM Based XSS: The JavaScript execution happens directly in the browser without any new pages being loaded or data submitted to backend code. (vulnerability exists in client-side code rather than the server-side code)
     * Look for parts of the code that access certain variables that an attacker can have control over, ex. `window.location.x`
     * Then see how they are handled and whether the values are ever written to the web page's DOM or passed to functions like `eval()`
+    * Example, use malicious input such as `<img src=x onerror=alert()>`:
+      ```javascript
+      var search = document.getElementById('search').value;
+      var results = document.getElementById('results');
+      results.innerHTML = 'You searched for: ' + search;
+      ```
   * Blind XSS: Similar to a stored XSS but you can't see the payload working or be able to test against yourself first.
     * [xsshunter](https://xsshunter.com/)
 * Payloads
@@ -442,6 +448,7 @@ Hacker                                                             website.thm  
   * `script` is filterd: `<sscriptcript>alert('hello');</sscriptcript>`
   * Escape IMG tag and `<`, `>` are filtered: `/images/cat.jpg" onload="alert('hello');`
     * `<img src="images/cat.jpg">` -> `<img src="/images/cat.jpg" onload="alert('hello');">`
+  * Chrome disabled `alert()` for cross-origin iframe: `print()`
   * Polyglots
 
 ## Command Injection
