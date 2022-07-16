@@ -55,3 +55,4 @@ An archive of the skills I've learned and some useful tools.
   * [Youtube](https://www.youtube.com/channel/UCWIxPblsd5y4QGR1qhX3FGA)
   * [Website](https://bamboofox.cs.nctu.edu.tw/)
 * [Try Hack Me](https://tryhackme.com)
+* [HackTricks](https://book.hacktricks.xyz/welcome/readme)
