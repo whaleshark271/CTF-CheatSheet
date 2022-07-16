@@ -21,7 +21,7 @@
 * [XSS Injection](#XSS-Injection)
 * [Command Injection](#Command-Injection)
 * [XML Injection](#XML-Injection)
-* [Clickjacking] (#Clickjacking)
+* [Clickjacking](#Clickjacking)
 * [AWS](#AWS)
 
 ## Tools
