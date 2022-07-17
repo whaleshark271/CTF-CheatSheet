@@ -7,7 +7,7 @@
 * [Nmap](#Nmap)
 * [Protocols](#Protocols)
 * [Headers](#Headers)
-* [OAuth 2.0](#OAuth-2.0)
+* [OAuth2.0](#OAuth2.0)
 * [Content Discovery](#Content-Discovery)
 * [Subdomain Enumeration](#Subdomain-Enumeration)
 * [FFUF](#FFUF)
@@ -193,7 +193,7 @@
     * If a request includes a credential (most commonly a `Cookie` header) and the response includes an `Access-Control-Allow-Origin: *` header (that is, with the wildcard), the browser will block access to the response, and report a CORS error in the devtools console.
   * Null origin
 
-## OAuth 2.0
+## OAuth2.0
 * [OAuth grant types](https://portswigger.net/web-security/oauth/grant-types)
 * Recon
   * Send GET request to `/.well-known/oauth-authorization-server` and `/.well-known/openid-configuration` for information such as additional features
@@ -432,6 +432,9 @@ Hacker                                                             website.thm  
       var results = document.getElementById('results');
       results.innerHTML = 'You searched for: ' + search;
       ```
+    * [DOM Invader](https://portswigger.net/burp/documentation/desktop/tools/dom-invader)
+    * Look for sinks such as `document.write` and `innerHTML`.
+      * `innerHTML` doesn't allow `<script>` or `<svg onload>`, use `<img ...>` and `<iframe>` instead.
   * Blind XSS: Similar to a stored XSS but you can't see the payload working or be able to test against yourself first.
     * [xsshunter](https://xsshunter.com/)
 * Payloads
