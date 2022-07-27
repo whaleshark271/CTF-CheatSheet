@@ -472,6 +472,9 @@ Hacker                                                             website.thm  
     * `<img src="images/cat.jpg">` -> `<img src="/images/cat.jpg" onload="alert('hello');">`
   * Chrome disabled `alert()` for cross-origin iframe: `print()`
   * Polyglots
+* Sandboxed iframe
+  * [Do NOT use alert(1) in XSS](https://liveoverflow.com/do-not-use-alert-1-in-xss/)
+  * Use `alert(document.domain)` and `alert(window.origin)` to check where the XSS is being executed
 
 ## Command Injection
 * PHP functions that interact with the operating system to execute commands via shell: `exec`, `passthru`, `system`
