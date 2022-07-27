@@ -51,6 +51,7 @@ An archive of the skills I've learned and some useful tools.
 * [Command Injection](Web#Command-Injection)
 * [XML Injection](Web#XML-Injection)
 ## Websites
+* [Web Security Academy](https://portswigger.net/web-security)
 * BambooFox
   * [Youtube](https://www.youtube.com/channel/UCWIxPblsd5y4QGR1qhX3FGA)
   * [Website](https://bamboofox.cs.nctu.edu.tw/)
