@@ -6,6 +6,7 @@
 * [Recon](#Recon)
 * [Nmap](#Nmap)
 * [Protocols](#Protocols)
+* [Cookies](#Cookies)
 * [Headers](#Headers)
 * [OAuth](#OAuth)
 * [Content Discovery](#Content-Discovery)
@@ -179,6 +180,11 @@
 * POP3: default port 110, Email (Mail Delivery Agent), Cleartext
 * SMTP: default port 25, Email (Mail Transfer Agent), Cleartext
 * Telnet: default port 23, Remote Access, Cleartext
+
+## Cookies
+* [Samesite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+  * Default is `lax` if not specified
+  * [Difference between `lax` and `strict`](https://stackoverflow.com/questions/59990864/what-is-difference-between-samesite-lax-and-samesite-strict)
 
 ## Headers
 * [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) (CSP)
