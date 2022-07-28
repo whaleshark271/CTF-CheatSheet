@@ -1,6 +1,10 @@
 # Mobile
 
+## Resources
+* [Mobile Security Testing Guide](https://mobile-security.gitbook.io/mobile-security-testing-guide/)
+
 ## Tools
+* [Android Studio](https://developer.android.com/studio)
 * [Genymotion](https://www.genymotion.com/): Android emulator
   * [Virtualbox](https://www.virtualbox.org/): Virtualization that Genymotion uses
 * Use virtualenv for pip
